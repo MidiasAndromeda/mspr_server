@@ -30,7 +30,7 @@
     <script type="text/javascript" src="./qrcode-lib/qrcode.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            fetch("http://127.0.0.1:3000")
+            fetch("https://hidden-savannah-62572.herokuapp.com/")
                 .then(result => result.json())
                 .then(result => {
                     new QRCode(document.getElementById("qrcode"), `${result._id}`);

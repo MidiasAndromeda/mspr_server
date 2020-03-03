@@ -9,13 +9,12 @@ import { QRCode } from './entity/QRCode.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'remotemysql.com',
-      port: 3306,
-      username: 'f4oV0Y1i9I',
-      password: '19fE6fxkVq',
-      database: 'f4oV0Y1i9I',
+      host: 'db5000316292.hosting-data.io',
+      database: 'dbs308641',
+      username: 'dbu213702',
+      password: 'Azertyuiop34@',
       entities: [ QRCode ],
-      synchronize: false
+      synchronize: false,
     }),
     TypeOrmModule.forFeature([QRCode])
   ],

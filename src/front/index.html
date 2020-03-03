@@ -33,7 +33,7 @@
             fetch("http://127.0.0.1:3000")
                 .then(result => result.json())
                 .then(result => {
-                    new QRCode(document.getElementById("qrcode"), `${result.id} : ${result.code} / ${result.discountRate}`);
+                    new QRCode(document.getElementById("qrcode"), `${result.id}`);
                     document.getElementById("catch-phrase").innerHTML = `Scannez ce code avec l'application pour bénéficier de ${result.discountRate} % de réduction.`
                 })
         })

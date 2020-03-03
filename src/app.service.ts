@@ -1,18 +1,15 @@
-import { Injectable } from '@nestjs/common';
-import { QRCode } from './entity/QRCode.entity';
-import { Repository } from 'typeorm';
-import { InjectRepository } from '@nestjs/typeorm';
+import { Inject, Injectable } from '@nestjs/common';
+import { Model } from 'mongoose';
+import { QrCode } from './interfaces/qrcode.interface';
 
 @Injectable()
 export class AppService {
   constructor(
-    @InjectRepository(QRCode)
-    private readonly qrCodeRepository: Repository<QRCode>
+    @Inject('QRCODE_MODEL') private readonly qrCodeModel: Model<QrCode>
   ) { }
 
-  async findRandomQRCode(): Promise<QRCode> {
-    // return this.qrCodeRepository.find();
-    const qrcodes = await this.qrCodeRepository.find();
+  async findRandomQRCode(): Promise<QrCode> {
+    const qrcodes = await this.qrCodeModel.find().exec();
     return qrcodes[Math.floor(Math.random() * qrcodes.length)];
   }
 }

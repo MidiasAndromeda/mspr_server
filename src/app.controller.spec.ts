@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { QRCode } from './entity/QRCode.entity';
+import { QRCode } from './schemas/qrcode.schema';
 
 describe('AppController', () => {
   let appController: AppController;

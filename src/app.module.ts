@@ -10,7 +10,7 @@ import { QRCode } from './entity/QRCode.entity';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'remotemysql.com',
-      port: '3306',
+      port: 3306,
       username: 'f4oV0Y1i9I',
       password: '19fE6fxkVq',
       database: 'f4oV0Y1i9I',

@@ -12,4 +12,8 @@ export class QrCodeService {
         const qrcodes = await this.qrCodeModel.find().exec();
         return qrcodes[Math.floor(Math.random() * qrcodes.length)];
     }
+
+    async getAll(): Promise<QrCode[]> {
+        return await this.qrCodeModel.find().exec();
+    }
 }

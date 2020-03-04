@@ -1,13 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import { QrCode } from './interfaces/qrcode.interface';
+import { QrCode } from './modules/qrcode/interfaces/qrcode.interface';
+import { QrCodeService } from './modules/qrcode/services/qrcode.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly qrCodeService: QrCodeService) {}
 
   @Get()
   async getRandomQrCode(): Promise<QrCode> {
-    return await this.appService.findRandomQRCode();
+    return await this.qrCodeService.getRandomQRCode();
   }
 }

@@ -1,10 +1,11 @@
 import * as mongoose from 'mongoose';
+import { CONNECTION_STRING, DATABASE_TOKEN } from '../consts/database.const';
 
-export const databaseProviders = [
+export const DatabaseProviders = [
     {
-        provide: 'DbConnectionToken',
+        provide: DATABASE_TOKEN,
         useFactory: (): Promise<typeof mongoose> =>
-            mongoose.connect('mongodb+srv://admin:admin@mspr-stoqz.mongodb.net/mspr?retryWrites=true&w=majority', {
+            mongoose.connect(CONNECTION_STRING, {
                 useUnifiedTopology: true,
                 useNewUrlParser: true
             }),

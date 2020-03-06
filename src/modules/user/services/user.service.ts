@@ -9,7 +9,7 @@ export class UserService {
     ) { }
 
     async getUserById(_id: string): Promise<User> {
-        Logger.log('Getting By Id', _id);
+        Logger.log(`Getting User By Id: ${_id}`);
         return await this.userModel.findById({ _id });
     }
 

@@ -2,8 +2,9 @@ import {
     Body,
     Controller,
     Get,
-    Param
-    } from '@nestjs/common';
+    Param,
+    Post
+} from '@nestjs/common';
 import { User } from '../interfaces/user.interface';
 import { UserService } from '../services/user.service';
 
@@ -16,8 +17,8 @@ export class UserController {
         return await this.userService.getUserById(_id);
     }
 
-    @Get('user')
-    async createQrCode(@Body() userCredentials: User): Promise<boolean> {
+    @Post('user')
+    async loginUser(@Body() userCredentials: User): Promise<boolean> {
         return await this.userService.getUserByUsernameAndPassword(userCredentials.username, userCredentials.password);
     }
 

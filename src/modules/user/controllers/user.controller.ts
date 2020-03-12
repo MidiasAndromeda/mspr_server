@@ -13,8 +13,8 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get('user/:id')
-    async getQrCodeById(@Param('id') _id: string): Promise<User> {
-        return await this.userService.getUserById(_id);
+    async findById(@Param('id') _id: string): Promise<User> {
+        return await this.userService.findById(_id);
     }
 
     @Post('user')

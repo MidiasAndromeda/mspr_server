@@ -8,7 +8,7 @@ export class UserService {
         @Inject('USER_MODEL') private readonly userModel: Model<User>
     ) { }
 
-    async getUserById(_id: string): Promise<User> {
+    async findById(_id: string): Promise<User> {
         Logger.log(`Getting User By Id: ${_id}`);
         return await this.userModel.findById({ _id });
     }

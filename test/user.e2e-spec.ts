@@ -6,6 +6,6 @@ describe('UserController', () => {
     it('/test (GET)', () => {
         return request(JEST_CONFIG.PROD_SERVER)
             .get('/test')
-            .expect(404)
+            .expect(200)
     });
 });

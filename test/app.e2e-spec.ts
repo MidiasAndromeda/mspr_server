@@ -6,7 +6,7 @@ describe('AppController', () => {
   it('/ (GET)', () => {
     return request(JEST_CONFIG.PROD_SERVER)
       .get('/')
-      .expect(404)
-      // .expect('Le back fonctionne, tudo bem.');
+      .expect(200)
+      .expect('Le back fonctionne, tudo bem.');
   });
 });

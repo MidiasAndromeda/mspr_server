@@ -4,7 +4,7 @@ import {
     Get,
     Param,
     Post
-} from '@nestjs/common';
+    } from '@nestjs/common';
 import { User } from '../interfaces/user.interface';
 import { UserService } from '../services/user.service';
 
@@ -15,7 +15,7 @@ export class UserController {
     //Test for continuous deployment
     @Get('test')
     test() {
-        return 'Test pour le projet mspr.';
+        return 'Accès au user controller ok.';
     }
 
     @Get('user/:id')

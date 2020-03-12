@@ -12,6 +12,11 @@ import { UserService } from '../services/user.service';
 export class UserController {
     constructor(private readonly userService: UserService) { }
 
+    @Get('user')
+    test() {
+        return 'test';
+    }
+    
     @Get('user/:id')
     async findById(@Param('id') _id: string): Promise<User> {
         return await this.userService.findById(_id);

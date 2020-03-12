@@ -12,6 +12,11 @@ import { UserService } from '../services/user.service';
 export class UserController {
     constructor(private readonly userService: UserService) { }
 
+    //Test for continuous deployment
+    @Get('test')
+    test() {
+        return 'Test pour le projet mspr.';
+    }
 
     @Get('user/:id')
     async findById(@Param('id') _id: string): Promise<User> {

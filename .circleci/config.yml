@@ -10,10 +10,17 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
+            - run:
+              name: Install JUnit coverage reporter
+              command: yarn add --dev jest-junit
+            - run:
+                name: Run tests with JUnit as reporter
+                command: jest --ci --runInBand --reporters=default --reporters=jest-junit
+                environment:
+                  JEST_JUNIT_OUTPUT_DIR: "reports/junit/js-test-results.xml"
             - run: npm run test:e2e
-            - run: npm test
             - run: npm run test:cov
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build-and-test:
+    jobs:
+      - build-and-test
